@@ -436,6 +436,7 @@ input.text:focus {
 @media ( max-width: 768px ) {
 	.headerRow {
 		text-align: center;
+		padding-bottom: 40px;
 	}
 
 	.programImg img{
