@@ -426,6 +426,26 @@ input.text:focus {
 
 }
 
+@media ( max-width: 410px ) {
+	.btn-prepend {
+		text-align: center!important;
+		width: 100%;
+		margin-bottom: 10px;
+	}
+}
+@media ( max-width: 768px ) {
+	.headerRow {
+		text-align: center;
+	}
+
+	.programImg img{
+		max-width: 100%;
+		height: auto;
+	}
+	.support .smaller {
+		font-size: .709rem;
+	}
+}
 @media ( min-width: 768px ) {
 
 	.sm-heading-outdent {
@@ -523,7 +543,6 @@ input.text:focus {
 
 /* PREPENDED first */
 .btn-prepend {
-	padding-left: 40px;
 	text-align: left;
 }
 
@@ -870,7 +889,7 @@ input.text:focus {
 }
 
 .fmenu {
-	font-size: 22px;
+	font-size: 17px;
 	font-weight: 700;
 }
 
@@ -1036,6 +1055,7 @@ input.text:focus {
 @media ( min-width: 1200px ) {
 	.hero-home {
 		background-color: #499149;
+		background-image: none;
 	}
 
 }
@@ -1049,10 +1069,6 @@ input.text:focus {
 	white-space: nowrap;
 }
 
-.hero-home .btn-prepend  + .btn-prepend  {
-	display: block;
-	max-width: 128px;
-}
 
 @media (min-width: 400px ) and (max-width: 767px ) and ( min-height: 390px ), 
 ( min-width: 768px ) and ( min-height: 510px ), ( min-width: 992px ) {
@@ -1085,19 +1101,7 @@ input.text:focus {
 	display: none;
 }
 
-.iphone-mobile {
-	height: 200px; 
-	width: 100%;
-	background: url("../img/v2/iphone6.min.png") 6% 0 no-repeat;
-	background-size: auto 100%; 
-}
-
 @media ( min-width: 768px ) {
-
-	.iphone-mobile  {
-		display: none;
-	}
-	
 	.program-inline {
 		display: block;
 	}
