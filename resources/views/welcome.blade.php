@@ -98,7 +98,7 @@
         <img src="img/programoje.png" alt class="mb-80 hidden-xs program-inline">
 
         <div class=container>
-            <div class="row mb-90 xs-mb-0 text-center">
+            <div class="row mb-90 xs-mb-0 xs-text-center">
 
                 <div class="col-sm-1 col-sm-offset-2">
                     <i class="icon icon-check"></i>
@@ -121,7 +121,7 @@
 
             </div>
 
-            <div class="row text-center">
+            <div class="row xs-text-center">
 
                 <div class="col-sm-1 col-sm-offset-2">
                     <i class="icon icon-user"></i>
