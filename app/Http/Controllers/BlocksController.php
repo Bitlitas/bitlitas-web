@@ -12,7 +12,7 @@ class BlocksController extends Controller
         while($x < 100) {
             $x++;
 
-            $lastBlock = Blocks::latest()->first();
+            $lastBlock = Blocks::orderBy('id', 'desc')->first();
 
             if ($lastBlock) {
                 $id = $lastBlock->block_height + 1;
