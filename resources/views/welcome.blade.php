@@ -82,7 +82,7 @@
 
 
         <div class="container mb-100 xs-mb-40">
-            <div class=row>
+            <div class="row xs-text-center">
                 <div class="col-sm-5 col-md-4 col-md-offset-2 col-sm-offset-1">
                     <h1 class="mb-10 xs-mb-10 color-dark heading-bordered">Viskas vienoje<br class=hidden-xs> programoje
                     </h1>
