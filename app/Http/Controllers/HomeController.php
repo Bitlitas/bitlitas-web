@@ -30,9 +30,9 @@ class HomeController extends Controller
         $moneyPercent = round(($money->value / 18300000) * 100, 1);
 
         if ($hashRate->value > 999 && $hashRate->value <= 999999) {
-            $hashResult = floor($hashRate->value / 1000) . ' kH/s.';
+            $hashResult = floor($hashRate->value / 1000) . ' kH/s';
         } elseif ($hashRate->value > 999999) {
-            $hashResult = floor($hashRate->value / 1000000) . ' mH/s.';
+            $hashResult = floor($hashRate->value / 1000000) . ' mH/s';
         } else {
             $hashResult = $hashRate->value;
         }
