@@ -17,7 +17,7 @@ class BlocksController extends Controller
 
         $url = "https://explorer.bitlitas.lt/api/blokas/" . $id;
 
-        $json = json_decode(file_get_contents($url), true);
+        $json = json_decode(self::loadFile($url), true);
 
         if(isset($json['data']) && $json['data']) {
             $data = $json['data'];
@@ -35,5 +35,19 @@ class BlocksController extends Controller
         } else {
             dd('Done');
         }
+    }
+
+
+    private function loadFile($url) {
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_URL, $url);
+
+        $data = curl_exec($ch);
+        curl_close($ch);
+
+        return $data;
     }
 }
