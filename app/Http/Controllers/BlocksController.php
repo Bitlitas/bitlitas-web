@@ -22,7 +22,7 @@ class BlocksController extends Controller
 
             $json = json_decode(self::loadFile($url), true);
 
-            if (isset($json['data']) && $json['data']) {
+            if (true == false && isset($json['data']) && $json['data']) {
                 $data = $json['data'];
                 $amount = $data['txs'][0]['lit_outputs'];
 
@@ -35,7 +35,8 @@ class BlocksController extends Controller
                 );
 
             } else {
-                dd('Done');
+                $sum = round((Blocks::sum('amount') / 1000000000000), 2);
+                dd($sum);
             }
         }
 
