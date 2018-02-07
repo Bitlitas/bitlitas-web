@@ -7,34 +7,39 @@ class BlocksController extends Controller
 {
     public function index()
     {
-        $lastBlock = Blocks::latest()->first();
+        $id = $x = 1;
 
-        $id = 1;
+        while($x < 100) {
+            $x++;
 
-        if($lastBlock) {
-            $id = $lastBlock->block_height + 1;
+            $lastBlock = Blocks::latest()->first();
+
+            if ($lastBlock) {
+                $id = $lastBlock->block_height + 1;
+            }
+
+            $url = "https://explorer.bitlitas.lt/api/blokas/" . $id;
+
+            $json = json_decode(self::loadFile($url), true);
+
+            if (isset($json['data']) && $json['data']) {
+                $data = $json['data'];
+                $amount = $data['txs'][0]['lit_outputs'];
+
+                Blocks::create(
+                    [
+                        'block_height' => (int)$data['block_height'],
+                        'amount' => $amount,
+                        'timestamp' => (int)$data['timestamp']
+                    ]
+                );
+
+            } else {
+                dd('Done');
+            }
         }
 
-        $url = "https://explorer.bitlitas.lt/api/blokas/" . $id;
-
-        $json = json_decode(self::loadFile($url), true);
-
-        if(isset($json['data']) && $json['data']) {
-            $data = $json['data'];
-            $amount = $data['txs'][0]['lit_outputs'];
-
-            Blocks::create(
-                [
-                    'block_height' => (int)$data['block_height'],
-                    'amount' => $amount,
-                    'timestamp' => (int)$data['timestamp']
-                ]
-            );
-
-            return redirect()->route('blocks');
-        } else {
-            dd('Done');
-        }
+        return redirect()->route('blocks');
     }
 
 
