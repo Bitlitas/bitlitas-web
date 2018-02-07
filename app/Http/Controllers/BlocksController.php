@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Blocks;
+use App\Statistic;
 
 class BlocksController extends Controller
 {
@@ -36,11 +37,22 @@ class BlocksController extends Controller
                             'timestamp' => (int)$data['timestamp']
                         ]
                     );
-                } else {
-                    dd('Kartojasi');
                 }
             } else {
                 $sum = round((Blocks::sum('amount') / 1000000000000), 2);
+
+                if(Statistic::where('stat', '=', 'mined')->count() < 1) {
+                    Statistic::create(
+                        [
+                            'stat' => 'mined',
+                            'value' => $sum,
+                        ]
+                    );
+                } else {
+                    Statistic::where('stat', 'mined')
+                        ->update(['value' => $sum]);
+                }
+
                 dd($sum);
             }
         }
