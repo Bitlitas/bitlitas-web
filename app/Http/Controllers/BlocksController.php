@@ -25,7 +25,7 @@ class BlocksController extends Controller
             if (isset($json['data']) && $json['data']) {
                 $data = $json['data'];
 
-                if(Blocks::get()->where('block_height', '=', $data['block_height'])->count() < 1) {
+                if(Blocks::where('block_height', '=', $data['block_height'])->count() < 1) {
 
                     $amount = $data['txs'][0]['lit_outputs'];
 
@@ -36,6 +36,8 @@ class BlocksController extends Controller
                             'timestamp' => (int)$data['timestamp']
                         ]
                     );
+                } else {
+                    dd('Kartojasi');
                 }
             } else {
                 $sum = round((Blocks::sum('amount') / 1000000000000), 2);
