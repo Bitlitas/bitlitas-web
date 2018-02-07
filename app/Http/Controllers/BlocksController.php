@@ -22,7 +22,7 @@ class BlocksController extends Controller
 
             $json = json_decode(self::loadFile($url), true);
 
-            if (true == false && isset($json['data']) && $json['data']) {
+            if (isset($json['data']) && $json['data']) {
                 $data = $json['data'];
 
                 $exists = Blocks::where('block_height', '=', $data['block_height']);
