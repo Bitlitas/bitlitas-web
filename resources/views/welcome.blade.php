@@ -57,6 +57,7 @@
                         <div class="progress-value">{{ $moneyPercent }} %</div>
                     </div>
                     <p class="text-center">Iš 18.3 mln. jau iškasta {{ $money }}</p>
+                    <p class="text-center fs-12">*Bet ne mažiau 0.3 LIT už bloką</p>
 
                     <hr class="hidden-sm hidden-md hidden-lg">
                 </div>
