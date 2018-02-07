@@ -24,16 +24,20 @@ class BlocksController extends Controller
 
             if (true == false && isset($json['data']) && $json['data']) {
                 $data = $json['data'];
-                $amount = $data['txs'][0]['lit_outputs'];
 
-                Blocks::create(
-                    [
-                        'block_height' => (int)$data['block_height'],
-                        'amount' => $amount,
-                        'timestamp' => (int)$data['timestamp']
-                    ]
-                );
+                $exists = Blocks::where('block_height', '=', $data['block_height']);
 
+                if(!$exists) {
+                    $amount = $data['txs'][0]['lit_outputs'];
+
+                    Blocks::create(
+                        [
+                            'block_height' => (int)$data['block_height'],
+                            'amount' => $amount,
+                            'timestamp' => (int)$data['timestamp']
+                        ]
+                    );
+                }
             } else {
                 $sum = round((Blocks::sum('amount') / 1000000000000), 2);
                 dd($sum);
