@@ -25,9 +25,8 @@ class BlocksController extends Controller
             if (isset($json['data']) && $json['data']) {
                 $data = $json['data'];
 
-                $exists = Blocks::where('block_height', '=', $data['block_height']);
+                if(Blocks::get()->where('block_height', '=', $data['block_height'])->count() < 1) {
 
-                if(!$exists) {
                     $amount = $data['txs'][0]['lit_outputs'];
 
                     Blocks::create(
