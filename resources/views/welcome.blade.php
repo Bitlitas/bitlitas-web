@@ -213,16 +213,15 @@
                     <h3 class="mb-15">Parama projektui</h3>
 
                     <p class="smallest">
-                        LIT:
-                        48s6r8VYQKUTrVvujtLxijTEzwCRyeW8PjF9aCAEeMGW1FLDJM2LhorEShbpbPRrxHANx3TKLT2mpaHybvKZLzC964iWHq6
+                        LTL:48s6r8VYQKUTrVvujtLxijTEzwCRyeW8PjF9aCAEeMGW1FLDJM2LhorEShbpbPRrxHANx3TKLT2mpaHybvKZLzC964iWHq6
                     </p>
 
                     <p class="smallest">
-                        BTC: 1G6x6ww5EbWgMrkY9jUXtX5Sio7DTm7u35
+                        BTC:1G6x6ww5EbWgMrkY9jUXtX5Sio7DTm7u35
                     </p>
 
                     <p class="smallest">
-                        ETH: 0x3602d4586a8129f400eddc503e85f95c576043b2
+                        ETH:0x3602d4586a8129f400eddc503e85f95c576043b2
                     </p>
 
                     <p class="smaller xs-mw">
