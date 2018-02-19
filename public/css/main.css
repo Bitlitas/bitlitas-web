@@ -1,7 +1,6 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,800,700);
 @import url("normalize.css");
 @import url("grid.css");
-@import url("modal.css");
 
 *,
 *:before,
@@ -1127,9 +1126,8 @@ input.text:focus {
 .img-right-sprite {
 	display: none;
 	position: absolute; 
-	right: -100px; 
+	right: 100px;
 	bottom: 0; 
-	width: 44.31818181818182%; 
 	height: 100%;
 }
 

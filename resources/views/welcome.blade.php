@@ -33,7 +33,7 @@
                         </a>
                     </div>
                     <div>
-                        v1.0.1
+                        v1.0.2
                     </div>
                 </div>
             </div>
@@ -57,6 +57,7 @@
                         <div class="progress-value">{{ $moneyPercent }} %</div>
                     </div>
                     <p class="text-center">Iš 18.3 mln. jau iškasta {{ $money }}</p>
+
                     <p class="text-center fs-12">*Bet ne mažiau 0.3 LIT už bloką</p>
 
                     <hr class="hidden-sm hidden-md hidden-lg">
@@ -97,6 +98,10 @@
         </div>
 
         <img src="img/programoje.png" alt class="mb-80 hidden-xs program-inline">
+
+        <div class="visible-xs xs-mb-40 programImg">
+            <img src="img/programoje.png" alt>
+        </div>
 
         <div class=container>
             <div class="row mb-90 xs-mb-0 xs-text-center">
@@ -150,6 +155,33 @@
     </div>
 
     <div class="level level-img-right">
+        <hr>
+
+        <div class="container xs-mb-30">
+            <img class=img-right-sprite src="img/phone.png" alt>
+
+            <div class="row mb-60 xs-mb-20">
+                <div class="col-sm-6 col-lg-offset-1 col-lg-5">
+                    <h1 class="mb-20 xs-mb-10 heading color-dark heading-bordered xl-heading-outdent">Jau ir
+                        telefone!</h1>
+
+                    <h2 style="margin-top: 50px;" class="w-300 color-dark mb-10">Android programėlė</h2>
+
+                    <p class=xs-mw>Nes piniginė turi būti mobili</p>
+
+                    <p class="xs-mw" style="margin-top: 50px;">
+                        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.litas.ltlwallet">
+                            <img class="img-responsive" style="max-height: 100px;" src="/img/google-play-badge.png">
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="level level-img-right">
 
         <div class="container xs-mb-30">
             <div class="row mb-60 xs-mb-20">
@@ -157,11 +189,6 @@
                     <h1 class="mb-20 xs-mb-10 heading color-dark heading-bordered xl-heading-outdent">Daugiau</h1>
                 </div>
             </div>
-
-            <div class="visible-xs xs-mb-40 programImg">
-                <img src="img/programoje.png" alt>
-            </div>
-
 
             <div class="row mb-60 xs-mb-20">
                 <div class="col-sm-1 col-lg-offset-1">

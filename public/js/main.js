@@ -67,118 +67,7 @@ $(function() {
 	else {
 		$videoBgSelector.remove();
 	}
-	
-	var checkModal = function() {
-		return $modalVideo.hasClass('active');
-	};
-	
-	 $(document).on('keydown.od47', function(e) {
-	 
-	 if ( checkModal() ) {
-			var target = $modalVideo.find('video');
-			switch(e.which) {
-			
-				case 27: clearVideo(); e.preventDefault();
-				break;
-				case 32: togglePlayPause(target); e.preventDefault();
-				break;
-				default: return; 
-			
-			}
-			// e.preventDefault();
-		}
-	});
-	
-	var clearVideo = function() {
-		// close modal video
-		var videoEle = $modalVideo.find('video').get(0);
-		$body.removeClass('modal-open');
-		$modalVideo.removeClass('playing').removeClass('active');
-	
-		videoEle.pause();
-		if ( $videoBgSelector.length ) {
-			videoBgEle.play();
-		}
-		
-		controlsTimer = null;
 
-		setTimeout(function() { 
-			if ( videoEle.readyState !== 0 ) {
-					videoEle.currentTime = 0;
-			}
-		}, 500);
-
-	};
-
-	var launchVideo = function( target ) {
-		
-		$body.addClass('modal-open');
-		$modalVideo.addClass('active').append('<i class="icon loading-icon"></i>');
-		var videoEle = $('#' + target).find('video').get(0);
-		videoEle.load();
-		// autotrigger play hack iOS (ipad)
-		videoEle.play();
-		videoEle.pause();
-		
-		$fadeControls.addClass('on');
-		beginFadeTimer(5000);
-		
-		
-		setTimeout(function() {
-			
-			videoEle.classList ? videoEle.classList.add('playing') : videoEle.className += ' playing';
-			
-			if ( videoBgEle && !videoBgEle.paused ) {
-				videoBgEle.pause();
-			}
-			videoEle.play();
-			$('.loading-icon').remove();
-			
-			videoEle.addEventListener('webkitendfullscreen', function() {
-				// clearVideo( videoEle );
-				clearVideo();
-			}, false);
-				
-			videoEle.addEventListener('ended', function() {
-				clearVideo();
-			}, false);
-			
-		},1000);
-	};
-	
-	// launch popup
-	$launchButton.on('click', function(e) {
-		if ( Modernizr.video  ) {
-			var target = $(this).data('videomodal');
-			launchVideo( target );
-			e.preventDefault();
-		} 
-		
-	});
-	
-	var togglePlayPause = function( trigger ) {
-		var videoEle = trigger.get(0);
-		// If the mediaPlayer is currently paused or has ended
-		if (videoEle.paused || videoEle.ended ) {
-			videoEle.play();
-			
-		}
-		// Otherwise it must currently be playing?
-		else {
-			videoEle.pause();
-		}
-	};
-	
-	$modalVideo.find('video').on('click', function ( e ){
-		var $this = $(this);
-		togglePlayPause( $this );
-	});
-	
-	$('.close-modal').on('click', function(e) {
-		// var videoModal = $(this).closest('.modal-video');
-		clearVideo();
-	});
-	
 	// timer fadeout on controls
 	var beginFadeTimer = function( duration ) {
 		$fadeControls.addClass('on');
@@ -250,40 +139,7 @@ $(function() {
 		// switched. ie test
 		$('label').addClass('sr-only');
 	}
-	
-	// "retry" form 
-	$(document).on( 'click', '.reload-form', function( e ) {
-		e.preventDefault();
-		$(this).closest('.success').removeClass('active').prev().removeClass('hide');
-	});
-	
-	// bootstrap dropdown 
-	
-	$(document).on('click', '.dropdown-menu li', function( e ) {
-		var $t = $(this),
-		$parent = $t.parent(),
-		optVal = $(this).data('value'),
-		placeholder = $(this).data('placeholder'),
-		displayTarget = $parent.data('displaytarget'),
-		inputTarget = $parent.data('inputtarget'),
-		$inputTarget = $(inputTarget);
-		$t.addClass('disabled').siblings().removeClass('disabled');
-		$(displayTarget).text(placeholder);
-		if ( inputTarget ) {
-			$inputTarget.find('option[value="' + optVal + '"]').attr('selected', 'selected').siblings().removeAttr('selected');
-		}
-	});
-	
-	// bootstrap modal hack - click detection to see if click is within modal or not 
-	// this css: http://jsfiddle.net/sRmLV/22/
-	$('.modal-valign-helper').on('click', function(e) {
-		var target = $( e.target );
-		if ( target.is('.modal-dialog') ) {
-				$('.modal').modal('hide');
-			}
 
-		// e.preventDefault();
-	});
 	
 	// external links in new window 
 	$('a[href^="http:"]').not('[href*="'+baseUrl+'"]').addClass('external').attr({target: "_blank"});
@@ -309,9 +165,7 @@ $(function() {
 			});
 		
 	}
-	
-	
-	
+
 	// util - needed ?
 	$(window).on('load', function() {
 		$body.addClass('loaded');

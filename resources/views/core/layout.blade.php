@@ -14,8 +14,8 @@
     <link rel=stylesheet href="css/ie.css">
     <![endif]-->
 
-    <script src="js/vendor/modernizr.js"></script>
-    <script src="js/vendor/respond.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 
     <link rel='shortcut icon' type='image/x-icon' href='img/favicon/icon.ico' />
 
