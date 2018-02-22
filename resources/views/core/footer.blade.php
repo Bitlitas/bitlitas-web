@@ -3,6 +3,7 @@
         <a href="/">PAGRINDINIS</a>
         | <a href="https://pool.bitlitas.lt">KASYKLA</a>
         | <a href="https://explorer.bitlitas.lt">BLOKAI</a>
+        | <a href="https://wiki.bitlitas.lt">WIKI</a>
     </p>
 
 </div>
