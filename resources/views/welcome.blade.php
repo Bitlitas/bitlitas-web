@@ -199,7 +199,7 @@
 
                     <p class="smaller xs-mw">
                         <a target="_blank" href="https://github.com/bitlitas/">GitHub.com</a>, <a target="_blank"
-                                                                                                  href="http://bit.ly/bitlitas">Discord
+                                                                                                  href="https://discordapp.com/invite/mfmyGe6">Discord
                             Chat kanalas</a>
                     </p>
                 </div>
